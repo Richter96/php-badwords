@@ -6,6 +6,8 @@ $paragraph = $_POST["paragraph"];
 
 $badword = $_POST["badword"];
 
+$censuredParagraph = str_replace($badword, "***", $paragraph);
+
 // echo $name;
 // echo $badword;
 // echo $paragraph;
@@ -50,8 +52,8 @@ $badword = $_POST["badword"];
                     <div class="card" style="width:25rem;" >
                         <div class="card-body">
                             <h5 class="card-title">Censored Paragraph</h5>
-                            <span>Lunghezza del paragrafo: <?php echo strlen($paragraph); ?></span>
-                            <p class="card-text border"><?php echo str_replace($badword, "***", $paragraph); ?></p>
+                            <span>Lunghezza del paragrafo: <?php echo strlen($censuredParagraph); ?></span>
+                            <p class="card-text border"><?php echo $censuredParagraph ?></p>
                         </div>
                     </div>
                 </div>
